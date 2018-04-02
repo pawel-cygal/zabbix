@@ -44,7 +44,7 @@ Basic test for https on domainname.com with --zabbix flag enabled. This flag pri
 ### More examples:
 
 ```
-./cert_checker.sh -d domainname.com -s
+./cert_checker.sh --domain=domainname.com -s
 
 Detected runtime OS family: Linux
 Checking service: smtp on port: 25
