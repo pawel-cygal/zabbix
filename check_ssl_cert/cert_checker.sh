@@ -118,9 +118,9 @@ function show_full_report(){
     _nice_output "Detected runtime OS family: ${DETECTED_OS_FAMILY}"
 
     if [[ -z "${SERVICE}" ]]; then
-        _nice_output "Chechking service: https on port: ${PORT}"
+        _nice_output "Checking service: https on port: ${PORT}"
     else
-        _nice_output "Chechking service: ${SERVICE} on port: ${PORT}"
+        _nice_output "Checking service: ${SERVICE} on port: ${PORT}"
     fi
 
     _success "-------------------------------------------------REPORT---------------------------------------------------"
