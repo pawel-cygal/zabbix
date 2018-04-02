@@ -17,7 +17,7 @@ def get_config():
     CONFIG = ConfigParser.RawConfigParser(allow_no_value=True)
     try:
         CONFIG.read('blacklists.cfg')
-        blacklist = ast.literal_eval(CONFIG.get('blacklist_config', 'blacklist'))
+        blacklist = ast.literal_eval(CONFIG.get('blacklist_providers', 'blacklist'))
     except (IOError, ConfigParser.NoSectionError):
         print "ERR: Somthing went wrong. Looks like configuration file is missing or has wrong structure" 
     else:
