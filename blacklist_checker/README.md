@@ -5,7 +5,7 @@ This simple python script checking if your IP Address (mail server) is
 listed on blacklist.  
 
 # Usage
-./blacklist_checker.py **<ip>**
+./blacklist_checker.py **\<ip\>**
 
 ## Configuration
 Script requires one configuration file in ini format placed in the same 
