@@ -15,8 +15,7 @@ name blacklists.cfg.
 ## blacklists.cfg structure
 Configuration file have only one section called 
 **[blacklist_providers]**
-in this section should be defined key called blacklist with and values 
-in dict format. Each value is representing one blacklist provider.
+in this section should be defined, key called blacklist with and list of values. Each value is representing one blacklist provider.
 Please see example bellow 
 ```
  [blacklist_providers]
