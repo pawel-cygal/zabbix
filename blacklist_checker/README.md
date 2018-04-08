@@ -9,7 +9,7 @@ listed on blacklist.
 
 ## Configuration
 Script requires one configuration file in ini format placed in the same 
-directory as blacklist_checker.py. Configuration files needs to have 
+directory as blacklist_checker.py. Configuration file needs to have 
 name blacklists.cfg.
 
 ## blacklists.cfg structure
