@@ -13,10 +13,10 @@ directory as blacklist_checker.py. Configuration file needs to have
 name blacklists.cfg.
 
 ## blacklists.cfg structure
-configuration file have only one section called 
+Configuration file have only one section called 
 **[blacklist_providers]**
-in this section should be defined key called blacklist with dict values 
-each value is representing one blacklist provider.
+in this section should be defined key called blacklist with and values 
+in dict format. Each value is representing one blacklist provider.
 Please see example bellow 
 ```
  [blacklist_providers]
