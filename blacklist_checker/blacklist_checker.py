@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+# Author: Pawel Cygal
+# Contact destine@poczta.fm
+# Date: 2016-07-17
+# INFO: This script is checking that provided ipv4 address is listed on email blacklist.
+# You can configure own blacklist provider which will be used for checking
 
 import smtplib
 import dns.resolver
