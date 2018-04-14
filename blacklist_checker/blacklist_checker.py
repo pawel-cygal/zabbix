@@ -19,7 +19,7 @@ def usage():
 
 
 def ip_is_valid(ip):
-    """Function validate provide ip address """
+    """Function validate provided ip address """
     try:
         socket.inet_aton(ip)
     except socket.error:
