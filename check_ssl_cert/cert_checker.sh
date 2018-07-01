@@ -67,7 +67,6 @@ function usage(){
     _nice_output "Example: $0 -d domainname.com"
     _nice_output "Example: $0 -d domainname.com -p 6363"
     _nice_output "Example: $0 --domain=domainname.com --port=25 --smtp"
-    _nice_output "Example: $0 domainname 25 --smtp --zabbix"
     _nice_output "Example: $0 -d dommainname.com -i --port=3232 -z"
 }
 
