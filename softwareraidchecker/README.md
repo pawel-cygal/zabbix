@@ -13,12 +13,13 @@ softwareraidchecker
 
 # Usage
 ./softraidchecker.py [options]
-
+```
 optional arguments:
   -h, --help       show this help message and exit
   --device DEVICE  software raid device name for example: md0
-  
- ## example
+```  
+
+## example
 ```
 ./softraidstatus.py --device md0
 ```
