@@ -15,6 +15,11 @@ import textwrap
 
 
 def checkraid(device_name):
+    """
+    This function is checking software raid STATES if mdamd report
+    active or clean STATE script will return value 0, otherwise
+    return value 1
+    """
     command_line = '/usr/bin/sudo /sbin/mdadm --detail /dev/' + device_name
     arg = shlex.split(command_line)
 
@@ -49,6 +54,7 @@ def checkraid(device_name):
 
 
 def main():
+    """ Main program """
     parser = argparse.ArgumentParser(prog='softraidchecker.py',
                                      usage='%(prog)s [options]',
                                      description=textwrap.dedent('''
