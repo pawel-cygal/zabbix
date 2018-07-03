@@ -23,3 +23,7 @@ optional arguments:
 ```
 ./softraidstatus.py --device md0
 ```
+
+## Returning values
+
+Script is returning value 0 if mdadm reported STATE is active or clean, otherwise return value 1

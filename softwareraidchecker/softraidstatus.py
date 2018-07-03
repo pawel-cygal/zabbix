@@ -57,7 +57,7 @@ def main():
                                      it with zabbix monitoring system
                                      '''),
                                      epilog=textwrap.dedent('''Script is returning
-                                     value 0 if mdadm report STATE is active or
+                                     value 0 if mdadm reported STATE is active or
                                      clean, otherwise return value 1
                                      '''))
     parser.add_argument('--device',
