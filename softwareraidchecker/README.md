@@ -19,7 +19,7 @@ optional arguments:
   --device DEVICE  software raid device name for example: md0
 ```  
 
-## example
+## Example
 ```
 ./softraidstatus.py --device md0
 ```
