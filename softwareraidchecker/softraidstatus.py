@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 """
 Author: Pawel Cygal
@@ -12,6 +12,23 @@ import subprocess
 import argparse
 import shlex
 import textwrap
+from shutil import which
+
+
+def check_dependencies(programs):
+    """ Check if program is installed in PATH and mark as executablie """
+    is_installed = []
+    is_not_installed = []
+
+    for program in programs:
+        if which(program) is not None:
+            is_installed.append(program)
+        else:
+            is_not_installed.append(program)
+
+    if len(is_not_installed) != 0:
+        print('ERR: Please install required program: %s' % is_not_installed)
+        exit(666)
 
 
 def checkraid(device_name):
@@ -43,7 +60,7 @@ def checkraid(device_name):
                            )
 
     output = cut.communicate()[0]
-    result = output.strip()
+    result = output.decode('utf-8').strip()
 
     if (result == 'active') or (result == 'clean'):
         is_ok = 0
@@ -63,8 +80,8 @@ def main():
                                      it with zabbix monitoring system
                                      '''),
                                      epilog=textwrap.dedent('''Script is returning
-                                     value 0 if mdadm reported STATE is active or
-                                     clean, otherwise return value 1
+                                     value 0 if mdadm reported STATE is active
+                                     or clean, otherwise return value 1
                                      '''))
     parser.add_argument('--device',
                         help='software raid device name for example: md0'
@@ -72,12 +89,15 @@ def main():
 
     args = parser.parse_args()
     device_name = args.device
+    program_dep = ['mdadm', 'grep', 'head', 'cut']
+    check_dependencies(program_dep)
 
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(1)
     else:
-        print checkraid(device_name)
+        print(checkraid(device_name))
+
 
 if __name__ == '__main__':
     main()
