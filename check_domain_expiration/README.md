@@ -6,9 +6,9 @@ This script is checking how many days left to expiration of domain name
 # Folder structure
 ```
 .
-check_domain_expiration
-    ├── README.md
-    └── checkdomainexpir.py
+├── README.md
+├── checkdomainexpir.py
+└── requirements.txt
 ```
 
 # Usage
