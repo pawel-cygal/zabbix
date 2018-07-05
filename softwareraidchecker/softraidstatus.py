@@ -28,7 +28,7 @@ def check_dependencies(programs):
 
     if len(is_not_installed) != 0:
         print('ERR: Please install required program: %s' % is_not_installed)
-        exit(666)
+        sys.exit(666)
 
 
 def checkraid(device_name):
