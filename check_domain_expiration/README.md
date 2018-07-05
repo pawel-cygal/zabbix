@@ -6,7 +6,7 @@ This script is checking how many days left to expiration of domain name
 # Folder structure
 ```
 .
-softwareraidchecker
+check_domain_expiration
     ├── README.md
     └── checkdomainexpir.py
 ```
