@@ -1,20 +1,24 @@
 ## In this repository you can find some usefull scripts and plugins for zabbix monitoring system
-#### INDEX
+#### INDEX:
+------
 
 * blacklist_checker
 
 **Purpose**  
 This script is checking how many days left to expiration of domain name
+------
 
 * check_domain_expiration
 
 **Purpose**  
 This script is checking how many days left to expiration of domain name
+------
 
 * check_ssl_cert
 
 **Purpose**  
 This simple bash script is checking days to expiration of ssl certificates.
+------
 
 * softwareraidchecker
 
