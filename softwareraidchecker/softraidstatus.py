@@ -61,12 +61,21 @@ def checkraid(device_name):
 
     output = cut.communicate()[0]
     result = output.decode('utf-8').strip()
+    return result
 
-    if (result == 'active') or (result == 'clean'):
-        is_ok = 0
+
+def show_raport(cr_result, arg):
+    if arg is False:
+        if (cr_result == 'active') or (cr_result == 'clean'):
+            is_ok = cr_result
+        else:
+            is_ok = cr_result
+        return is_ok
     else:
-        is_ok = 1
-
+        if (cr_result == 'active') or (cr_result == 'clean'):
+            is_ok = 0
+        else:
+            is_ok = 1
     return is_ok
 
 
@@ -79,12 +88,20 @@ def main():
                                      STATES. Its main purpose is to integrate
                                      it with zabbix monitoring system
                                      '''),
-                                     epilog=textwrap.dedent('''Script is returning
-                                     value 0 if mdadm reported STATE is active
+                                     epilog=textwrap.dedent('''Script is by
+                                     default returning STATE of software raid.
+                                     When --zabbix option is passed then script
+                                     will return value 0 if state is active
                                      or clean, otherwise return value 1
                                      '''))
     parser.add_argument('--device',
                         help='software raid device name for example: md0'
+                        )
+    parser.add_argument('--zabbix',
+                        help='''simple status for zabbix 0 = active or clean
+                        value of 1 mean other status''',
+                        default=False,
+                        action='store_true'
                         )
 
     args = parser.parse_args()
@@ -96,7 +113,8 @@ def main():
         parser.print_help()
         sys.exit(1)
     else:
-        print(checkraid(device_name))
+        status = checkraid(device_name)
+        print(show_raport(status, args.zabbix))
 
 
 if __name__ == '__main__':
