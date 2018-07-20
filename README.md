@@ -3,7 +3,7 @@
 1. blacklist_checker
 
 **Purpose**  
-This script is checking how many days left to expiration of domain name  
+This script is checking if your mail server is listed on blacklist 
 
 ------
 
