@@ -13,19 +13,19 @@ FILE="cert_check_result_${DATE}.txt"
 
 # Function print output in nice way
 function _nice_output(){
-    printf "\033[0;36m$1\033[m\n"
+    printf "\033[0;36m%s\033[m\n" "$1"
 }
 
 
 # Function print output in red color for errors
 function _fail(){
-    printf "\033[0;31m$1\033[0m\n" 1>&2
+    printf "\033[0;31m%s\033[0m\n" "$1" 1>&2
 }
 
 
 # Function print output in green color for success
 function _success(){
-    printf "\033[0;32m$1\033[0m\n"
+    printf "\033[0;32m%s\033[0m\n" "$1"
 }
 
 
