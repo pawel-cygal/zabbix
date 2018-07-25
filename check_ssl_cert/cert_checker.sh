@@ -170,37 +170,37 @@ while getopts "$OPTSPEC" OPTCHAR; do
         ;;
         d)
             DOMAIN=${OPTARG}
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=443
             fi
         ;;
         s)
             SERVICE="smtp"
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=25
             fi
         ;;
         i)
             SERVICE="imap"
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=143
             fi
         ;;
         o)
             SERVICE="pop3"
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=110
             fi
         ;;
         f)
             SERVICE="ftp"
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=21
             fi
         ;;
         x)
             SERVICE="xmpp"
-            if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+            if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                 PORT=5222
             fi
         ;;
@@ -226,31 +226,31 @@ while getopts "$OPTSPEC" OPTCHAR; do
                ;;
                 smtp)
                     SERVICE="smtp"
-                    if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+                    if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                         PORT=25
                     fi
                 ;;
                 imap)
                     SERVICE="imap"
-                    if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+                    if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                         PORT=143
                     fi
                 ;;
                 pop3)
                     SERVICE="pop3"
-                    if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+                    if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                         PORT=110
                     fi
                 ;;
                 xmpp)
                     SERVICE="xmpp"
-                    if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+                    if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                         PORT=5222
                     fi
                 ;;
                 ftp)
                     SERVICE="ftp"
-                    if ! [[ "$@" =~ -p ]] || ! [[ "$@" =~ --port ]]; then
+                    if ! [[ "$*" =~ -p ]] || ! [[ "$*" =~ --port ]]; then
                         PORT=21
                     fi
                 ;;
@@ -269,7 +269,7 @@ while getopts "$OPTSPEC" OPTCHAR; do
     esac
 done
 
-if [[ "$@" =~ -h ]] || [[ "$@" =~ --help ]]; then
+if [[ "$*" =~ -h ]] || [[ "$*" =~ --help ]]; then
     exit 1
 elif [[ "$#" -lt 2 ]]; then
     _fail "ERR: You need to specify at least one option. "
