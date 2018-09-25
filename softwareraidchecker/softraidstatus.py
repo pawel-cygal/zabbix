@@ -5,7 +5,7 @@ Author: Pawel Cygal
 Email: destine@poczta.fm
 Date: 2018-07-02
 This script is chcecking status of software raid
-''
+'''
 
 import sys
 import subprocess
