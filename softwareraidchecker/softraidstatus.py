@@ -16,7 +16,7 @@ from shutil import which
 
 
 def check_dependencies(programs):
-    """ Check if program is installed in PATH and mark as executablie """
+    ''' Check if program is installed in PATH and mark as executablie '''
     is_installed = []
     is_not_installed = []
 
@@ -32,11 +32,11 @@ def check_dependencies(programs):
 
 
 def checkraid(device_name):
-    """
+    '''
     This function is checking software raid STATES if mdamd report
     active or clean STATE script will return value 0, otherwise
     return value 1
-    """
+    '''
     command_line = '/usr/bin/sudo /sbin/mdadm --detail /dev/' + device_name
     arg = shlex.split(command_line)
 
@@ -80,7 +80,7 @@ def show_raport(cr_result, arg):
 
 
 def main():
-    """ Main program """
+    ''' Main program '''
     parser = argparse.ArgumentParser(prog='softraidchecker.py',
                                      usage='%(prog)s [options]',
                                      description=textwrap.dedent('''
