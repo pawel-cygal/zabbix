@@ -14,12 +14,12 @@ import socket
 
 
 def usage():
-    """just prints help"""
+    ''' just prints help '''
     print 'Usage: %s <ipv4>\n' % (sys.argv[0])
 
 
 def ip_is_valid(ip):
-    """Function validate provided ip address """
+    ''' Function validate provided ip address '''
     try:
         socket.inet_aton(ip)
     except socket.error:
@@ -32,7 +32,10 @@ def ip_is_valid(ip):
 
 
 def get_config():
-    """Function is checking if configuration file exist and has required section"""
+    ''' 
+    Function is checking if configuration 
+    file exist and has required section 
+    '''
     CONFIG = ConfigParser.RawConfigParser(allow_no_value=True)
     try:
         CONFIG.read('blacklists.cfg')
@@ -44,7 +47,10 @@ def get_config():
 
 
 def check_blacklists(blacklist):
-    """Function is checking if your ip is listed on mailing blacklist configured in blacklist.cfg"""
+    ''' 
+    Function is checking if your ip is listed on 
+    mailing blacklist configured in blacklist.cfg 
+    '''
     if blacklist:
         for blacklist_provider in blacklist:
             try:
