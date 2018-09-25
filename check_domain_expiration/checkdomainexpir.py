@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-"""
+'''
 Author: Pawel Cygal
 Email: destine@poczta.fm
 Date: 2018-07-05
 This script is chcecking domain name expiration date
-"""
+'''
 
 import sys
 import textwrap
@@ -16,13 +16,13 @@ from datetime import datetime
 
 
 def domain_is_valid(domainname):
-    '''Check if domain name is valid'''
+    ''' Check if domain name is valid '''
     is_valid = validators.domain(domainname)
     return is_valid
 
 
 def check_expiration_date(domainname):
-    '''Fucntion is checking expiration date for domain'''
+    ''' Fucntion is checking expiration date for domain '''
     w = whois.query(domainname)
     if type(w.expiration_date) == list:
         w.expiration_date = w.expiration_date[0]
@@ -44,7 +44,7 @@ def days_to_expiration(ed):
 
 
 def main():
-    """ Main program """
+    ''' Main program '''
     parser = argparse.ArgumentParser(prog='checkdomainexpir.py',
                                      usage='%(prog)s [options]',
                                      description=textwrap.dedent('''
